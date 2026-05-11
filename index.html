@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connectivity360 — Tango</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+body{
+  margin:0;
+  background:#0b1220;
+  color:white;
+  font-family:Arial, sans-serif;
+}
+
+.header{
+  background:#111827;
+  padding:20px;
+  border-bottom:1px solid #1f2937;
+}
+
+.logo{
+  font-size:32px;
+  font-weight:bold;
+}
+
+.logo span{
+  color:#7DC242;
+}
+
+.container{
+  padding:20px;
+}
+
+.card{
+  background:#111827;
+  border:1px solid #1f2937;
+  border-radius:14px;
+  padding:20px;
+  margin-bottom:20px;
+}
+
+.title{
+  font-size:20px;
+  margin-bottom:15px;
+  color:#0D7A6E;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+
+.kpi{
+  background:#1f2937;
+  padding:15px;
+  border-radius:12px;
+}
+
+.kpi-label{
+  font-size:12px;
+  color:#9ca3af;
+  margin-bottom:8px;
+}
+
+.kpi-value{
+  font-size:28px;
+  font-weight:bold;
+}
+
+.red{
+  color:#ef4444;
+}
+
+.green{
+  color:#22c55e;
+}
+
+.orange{
+  color:#f59e0b;
+}
+
+.topology{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.node{
+  background:#1f2937;
+  border:2px solid #22c55e;
+  border-radius:50%;
+  width:90px;
+  height:90px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+}
+
+.line{
+  width:50px;
+  height:4px;
+  background:#22c55e;
+}
+
+.alert{
+  background:#3b0d0d;
+  border:1px solid #ef4444;
+  padding:15px;
+  border-radius:10px;
+  color:#fecaca;
+  margin-bottom:20px;
+}
+
+.btn{
+  background:#0D7A6E;
+  border:none;
+  color:white;
+  padding:12px 20px;
+  border-radius:10px;
+  cursor:pointer;
+  margin-top:10px;
+  font-weight:bold;
+}
+
+.btn:hover{
+  background:#0b5d54;
+}
+
+.footer{
+  text-align:center;
+  padding:30px;
+  color:#6b7280;
+  font-size:12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="logo">
+    tan<span>go</span> Connectivity360
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="alert">
+    ⚠ Fibre optique dégradée détectée — Rx Signal inférieur au seuil recommandé.
+  </div>
+
+  <div class="card">
+    <div class="title">Vue rapide</div>
+
+    <div class="grid">
+
+      <div class="kpi">
+        <div class="kpi-label">SLID</div>
+        <div class="kpi-value">221100530437</div>
+      </div>
+
+      <div class="kpi">
+        <div class="kpi-label">RX Signal</div>
+        <div class="kpi-value red">-29.4 dBm</div>
+      </div>
+
+      <div class="kpi">
+        <div class="kpi-label">TX Signal</div>
+        <div class="kpi-value green">5.756 dBm</div>
+      </div>
+
+      <div class="kpi">
+        <div class="kpi-label">PPP</div>
+        <div class="kpi-value green">UP</div>
+      </div>
+
+      <div class="kpi">
+        <div class="kpi-label">Ethernet</div>
+        <div class="kpi-value orange">1G FD</div>
+      </div>
+
+      <div class="kpi">
+        <div class="kpi-label">Health Score</div>
+        <div class="kpi-value green">92%</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="title">Topologie</div>
+
+    <div class="topology">
+
+      <div class="node">PTO</div>
+      <div class="line"></div>
+
+      <div class="node">ONT</div>
+      <div class="line"></div>
+
+      <div class="node">FRITZ</div>
+      <div class="line"></div>
+
+      <div class="node">NET</div>
+
+    </div>
+
+    <button class="btn" onclick="alert('Test de ligne lancé')">
+      Lancer un test de ligne
+    </button>
+
+  </div>
+
+  <div class="card">
+    <div class="title">Diagnostic automatique</div>
+
+    <p>
+      Perte optique élevée détectée.
+      Vérifier la fibre entre le PTO et l’ONT.
+    </p>
+
+    <ul>
+      <li>Vérifier les connecteurs</li>
+      <li>Contrôler la continuité fibre</li>
+      <li>Escalade N2 si persistant</li>
+    </ul>
+
+  </div>
+
+</div>
+
+<div class="footer">
+  Connectivity360 © 2024 — Tango
+</div>
+
+</body>
+</html>
